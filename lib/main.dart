@@ -10,8 +10,7 @@ class XylophoneApp extends StatelessWidget {
 
   void playNote(int noteNumber) async {
     final player = AudioPlayer();
-    await player.setSource(AssetSource('audio/note$noteNumber.wav'));
-    await player.resume();
+    await player.play(AssetSource('audio/note$noteNumber.wav'));
   }
 
   Expanded renderNoteSoundBtn({ required Color color, required int noteNumber }) {
